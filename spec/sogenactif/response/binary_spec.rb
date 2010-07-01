@@ -27,12 +27,10 @@ describe Sogenactif::ResponseBinary do
       end.should raise_error Sogenactif::Errors::ApiCall
     end
     
-    it 'should raise an error if the number of elements is not equal to the number of fields' do
+    it 'should not raise an error if the number of elements is not equal to the number of fields' do
       response = Sogenactif::Response.new('testing')
       response.expects(:exec).once.returns('!0!!!!!')
-      lambda do
-        response.launch
-      end.should raise_error Sogenactif::Errors::InvalidFieldsNumber
+      response.launch.should be_kind_of Hash
     end
     
     it 'should get the response elements' do

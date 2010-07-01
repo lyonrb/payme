@@ -13,7 +13,6 @@ module Sogenactif
           
           raise Sogenactif::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
           raise Sogenactif::Errors::ApiCall.new(result[1], result[2]) unless result[1].to_i == 0
-          raise Sogenactif::Errors::InvalidFieldsNumber unless result.length == fields.length + 1
           parse_result result
         end
         
