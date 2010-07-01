@@ -31,7 +31,7 @@ describe Sogenactif::RequestBinary do
     it 'should return the form' do
       request = Sogenactif::Request.new
       request.expects(:exec).once.returns('!0!!Some Form')
-      request.launch.should eql('Some Form')
+      request.launch.should eql(['', '0', '', 'Some Form'])
     end
   end
   

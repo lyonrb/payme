@@ -13,7 +13,7 @@ module Sogenactif
           
           raise Sogenactif::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
           raise Sogenactif::Errors::ApiCall.new(result[1], result[2]) unless result[1].to_i == 0
-          result[3]
+          result
         end
         
         private
