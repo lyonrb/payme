@@ -19,7 +19,7 @@ module Sogenactif
     
     def default_params
       {
-        :merchant_id => '123456789',
+        :merchant_id => '014213245611111',
         :merchant_country => 'fr',
         :amount => 0,
         :currency_code => 978,
