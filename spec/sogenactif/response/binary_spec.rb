@@ -49,25 +49,25 @@ describe Sogenactif::ResponseBinary do
   describe 'exec' do
     it 'should execute the binary with basic  options' do
       response = Sogenactif::Response.new('testing')
-      response.expects(:`).with("/response / testing").once
+      response.expects(:`).with("/response pathfile=/ message=testing").once
       response.send(:exec)
     end
     
     it 'should execute the binary with a different message' do
       response = Sogenactif::Response.new('42')
-      response.expects(:`).with("/response / 42").once
+      response.expects(:`).with("/response pathfile=/ message=42").once
       response.send(:exec)
     end
     
     it 'should execute the binary with a defined path' do
       response = Sogenactif::Response.new('testing', :bin_path => '/bin')
-      response.expects(:`).with("/bin/response / testing").once
+      response.expects(:`).with("/bin/response pathfile=/ message=testing").once
       response.send(:exec)
     end
     
     it 'should execute the binary with a defined file' do
-      response = Sogenactif::Response.new('testing', :file_path => '/file')
-      response.expects(:`).with("/response /file testing").once
+      response = Sogenactif::Response.new('testing', :filepath => '/file')
+      response.expects(:`).with("/response pathfile=/file message=testing").once
       response.send(:exec)
     end
   end

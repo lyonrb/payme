@@ -11,7 +11,7 @@ module Sogenactif
     private
     def default_options
       {
-        :file_path => '/',
+        :filepath => '/',
         :bin_path => '/',
         :debug => true
       }
