@@ -22,7 +22,8 @@ module Sogenactif
         :merchant_id => '123456789',
         :merchant_country => 'fr',
         :amount => 0,
-        :currency_code => 978
+        :currency_code => 978,
+        :pathfile => '/'
       }
     end
   end
