@@ -1,10 +1,8 @@
 module Sogenactif
   module Errors
     
-    #
-    # The request exceptions
-    #
     class MissingPath < RuntimeError; end
+    class InvalidFieldsNumber < RuntimeError; end
     class ApiCall < RuntimeError
       attr_reader    :code, :error
       def initialize(code, error)
