@@ -24,6 +24,9 @@ And that's it! We'll soon take a look at your issue and review your changes.
 
 Developped and maintained by [LIM SAS](http://lim.eu)
 
+
 Damien MATHIEU :: damien.mathieu (AT|CHEZ) lim.eu
+
 Julien SANCHEZ :: julien.sanchez (AT|CHEZ) lim.eu
+
 Hervé GAUCHER  :: herve.gaucher  (AT|CHEZ) lim.eu
