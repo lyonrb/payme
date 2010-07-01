@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sogenactif::Binary do
+describe Sogenactif::RequestBinary do
   
   describe 'launch' do
     

@@ -1,5 +1,5 @@
 module Sogenactif
-  module Binary
+  module RequestBinary
     def self.included(klass)
       klass.class_eval do
         
@@ -29,4 +29,4 @@ module Sogenactif
   end
 end
 
-Sogenactif::Request.send(:include, Sogenactif::Binary)
+Sogenactif::Request.send(:include, Sogenactif::RequestBinary)
