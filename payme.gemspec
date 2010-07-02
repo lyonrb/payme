@@ -13,22 +13,39 @@ Gem::Specification.new do |s|
   s.description = %q{Need online payment?}
   s.email = %q{damien.mathieu@lim.eu}
   s.extra_rdoc_files = [
-    "README.md"
+    "LICENSE",
+     "README.md"
   ]
   s.files = [
     "Gemfile",
+     "LICENSE",
      "README.md",
      "Rakefile",
      "VERSION",
+     "lib/payme.rb",
+     "lib/payme/config.rb",
+     "lib/payme/errors.rb",
+     "lib/payme/request.rb",
+     "lib/payme/request/binary.rb",
+     "lib/payme/request/params.rb",
+     "lib/payme/response.rb",
+     "lib/payme/response/binary.rb",
+     "payme.gemspec",
      "sogenactif.gemspec",
      "spec/fixtures/config.yml",
+     "spec/payme/config_spec.rb",
+     "spec/payme/request/binary_spec.rb",
+     "spec/payme/request/params_spec.rb",
+     "spec/payme/request_spec.rb",
+     "spec/payme/response/binary_spec.rb",
+     "spec/payme/response_spec.rb",
      "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/LIMSAS/payme}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Process online payments through the Sogenactif gateway}
+  s.summary = %q{Process online payments through the Atos Worldline gateway}
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/payme/request_spec.rb",
