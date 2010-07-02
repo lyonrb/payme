@@ -14,6 +14,9 @@ Spec::Rake::SpecTask.new('spec') do |t|
   t.spec_opts = ['-cfs']
 end
 
+#
+# Jeweler
+#
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
@@ -26,4 +29,13 @@ begin
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
+end
+
+#
+# SDoc
+#
+begin
+  require 'sdoc_helpers'
+rescue LoadError
+  puts "sdoc support not enabled. Please gem install sdoc-helpers."
 end
