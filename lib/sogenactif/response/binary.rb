@@ -22,7 +22,7 @@ module Sogenactif
         #
         def exec
           path = File.join(options[:bin_path], 'response')
-          `#{path} pathfile=#{options[:filepath]} message=#{message}`
+          `#{path} pathfile=#{options[:pathfile]} message=#{message}`
         end
         
         def parse_result(result)

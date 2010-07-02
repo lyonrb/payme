@@ -64,7 +64,7 @@ describe Sogenactif::ResponseBinary do
     end
     
     it 'should execute the binary with a defined file' do
-      response = Sogenactif::Response.new('testing', :filepath => '/file')
+      response = Sogenactif::Response.new('testing', :pathfile => '/file')
       response.expects(:`).with("/response pathfile=/file message=testing").once
       response.send(:exec)
     end

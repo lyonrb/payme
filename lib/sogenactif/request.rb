@@ -11,14 +11,10 @@ module Sogenactif
     private
     def default_options
       {
-        :bin_path => '/',
-        :debug => true,
-        
         :merchant_id => '014213245611111',
         :merchant_country => 'fr',
         :currency_code => 978,
-        :pathfile => '/'
-      }
+      }.merge Sogenactif::Config.default
     end
   end
 end
