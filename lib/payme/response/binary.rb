@@ -1,4 +1,4 @@
-module Sogenactif
+module Payme
   module ResponseBinary
     def self.included(klass)
       klass.class_eval do
@@ -11,8 +11,8 @@ module Sogenactif
         def launch
           result = exec.split('!')
           
-          raise Sogenactif::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
-          raise Sogenactif::Errors::ApiCall.new(result[1], result[2]) unless result[1].to_i == 0
+          raise Payme::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
+          raise Payme::Errors::ApiCall.new(result[1], result[2]) unless result[1].to_i == 0
           parse_result result
         end
         
@@ -46,4 +46,4 @@ module Sogenactif
   end
 end
 
-Sogenactif::Response.send(:include, Sogenactif::ResponseBinary)
+Payme::Response.send(:include, Payme::ResponseBinary)

@@ -1,4 +1,4 @@
-module Sogenactif
+module Payme
   class Config
     @@config_path = nil
     @@config_env = nil

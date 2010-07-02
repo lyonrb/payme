@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe Sogenactif::Params do
+describe Payme::Params do
   
   describe 'parse_params' do
     it 'should parse the default params' do
-      Sogenactif::Request.new(300).parse_params.should match(/([a-z\_]+)=([0-z]+)/)
+      Payme::Request.new(300).parse_params.should match(/([a-z\_]+)=([0-z]+)/)
     end    
     
     it 'should parse defined params' do
-      Sogenactif::Request.new(300, {
+      Payme::Request.new(300, {
         :merchant_id => '0000',
         :amount => 15,
         :merchant_country => 'uk',
@@ -17,23 +17,23 @@ describe Sogenactif::Params do
     end
     
     it 'should have the merchant id' do
-      Sogenactif::Request.new(300).parse_params.should match(/merchant_id=014213245611111/)
+      Payme::Request.new(300).parse_params.should match(/merchant_id=014213245611111/)
     end
     
     it 'should have the merchant country' do
-      Sogenactif::Request.new(300).parse_params.should match(/merchant_country=fr/)
+      Payme::Request.new(300).parse_params.should match(/merchant_country=fr/)
     end
     
     it 'should have the currency code' do
-      Sogenactif::Request.new(300).parse_params.should match(/currency_code=978/)
+      Payme::Request.new(300).parse_params.should match(/currency_code=978/)
     end
     
     it 'should have the pathfile' do
-      Sogenactif::Request.new(300).parse_params.should match(/pathfile=\//)
+      Payme::Request.new(300).parse_params.should match(/pathfile=\//)
     end
     
     it 'should have the amount' do
-      Sogenactif::Request.new(300).parse_params.should match(/amount=300/)
+      Payme::Request.new(300).parse_params.should match(/amount=300/)
     end
   end
 end

@@ -1,4 +1,4 @@
-module Sogenactif
+module Payme
   class Request
     attr_reader   :amount, :options
     
@@ -14,10 +14,10 @@ module Sogenactif
         :merchant_id => '014213245611111',
         :merchant_country => 'fr',
         :currency_code => 978,
-      }.merge Sogenactif::Config.default
+      }.merge Payme::Config.default
     end
   end
 end
 
-require 'sogenactif/request/params'
-require 'sogenactif/request/binary'
+require 'payme/request/params'
+require 'payme/request/binary'

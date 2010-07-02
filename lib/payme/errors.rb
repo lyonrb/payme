@@ -1,4 +1,4 @@
-module Sogenactif
+module Payme
   module Errors
     
     class MissingPath < RuntimeError; end

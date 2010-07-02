@@ -17,11 +17,11 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "sogenactif"
-    gemspec.summary = "Process online payments through the Sogenactif gateway"
+    gemspec.name = "payme"
+    gemspec.summary = "Process online payments through the Atos Worldline gateway"
     gemspec.description = "Need online payment?"
     gemspec.email = "damien.mathieu@lim.eu"
-    gemspec.homepage = "http://github.com/LIMSAS/sogenactif"
+    gemspec.homepage = "http://github.com/LIMSAS/payme"
     gemspec.authors = ["LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Hervé GAUCHER"]
   end
 rescue LoadError

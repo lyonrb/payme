@@ -1,4 +1,4 @@
-module Sogenactif
+module Payme
   module Params
     def self.included(klass)
       klass.class_eval do
@@ -24,4 +24,4 @@ module Sogenactif
   end
 end
 
-Sogenactif::Request.send(:include, Sogenactif::Params)
+Payme::Request.send(:include, Payme::Params)

@@ -1,4 +1,4 @@
-require 'sogenactif'
+require 'payme'
 
 require 'spec'
 require 'mocha'
