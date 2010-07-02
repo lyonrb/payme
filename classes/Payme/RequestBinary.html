@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Payme::RequestBinary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+    <script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            Payme::RequestBinary 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/payme/request/binary_rb.html">lib/payme/request/binary.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>E</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-i-exec">exec</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-c-included">included</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>L</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-i-launch">launch</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="method-c-included">
+                    
+                    <a name="method-c-included"></a><b>included</b>(klass)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/binary.rb#L3" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-c-included_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/binary.rb, line 3</span>
+ 3:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
+ 4:       <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+ 5:         
+ 6:         <span class="ruby-comment cmt">#</span>
+ 7:         <span class="ruby-comment cmt"># Executes the binary call, gets the datas</span>
+ 8:         <span class="ruby-comment cmt"># Validates that the the code is correct</span>
+ 9:         <span class="ruby-comment cmt"># And returns the form</span>
+10:         <span class="ruby-comment cmt">#</span>
+11:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">launch</span>
+12:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">exec</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'!'</span>)
+13:           
+14:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingPath</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">or</span> (<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">empty?</span>)
+15:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+16:           <span class="ruby-identifier">result</span>
+17:         <span class="ruby-keyword kw">end</span>
+18:         
+19:         <span class="ruby-identifier">private</span>
+20:         <span class="ruby-comment cmt">#</span>
+21:         <span class="ruby-comment cmt"># Executes the binary call</span>
+22:         <span class="ruby-comment cmt">#</span>
+23:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
+24:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'request'</span>)
+25:           <span class="ruby-node">`#{path} #{parse_params}`</span>
+26:         <span class="ruby-keyword kw">end</span>
+27:       <span class="ruby-keyword kw">end</span>
+28:     <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="method-i-exec">
+                    
+                    <a name="method-i-exec"></a><b>exec</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Executes the binary call
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-i-exec_source')" id="l_method-i-exec_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/binary.rb#L23" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-i-exec_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/binary.rb, line 23</span>
+23:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
+24:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'request'</span>)
+25:           <span class="ruby-node">`#{path} #{parse_params}`</span>
+26:         <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="method-i-launch">
+                    
+                    <a name="method-i-launch"></a><b>launch</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Executes the binary call, gets the datas Validates that the the code is
+correct And returns the form
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-i-launch_source')" id="l_method-i-launch_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/binary.rb#L11" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-i-launch_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/binary.rb, line 11</span>
+11:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">launch</span>
+12:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">exec</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'!'</span>)
+13:           
+14:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingPath</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">or</span> (<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">empty?</span>)
+15:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+16:           <span class="ruby-identifier">result</span>
+17:         <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

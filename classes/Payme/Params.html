@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Payme::Params</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+    <script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            Payme::Params 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/payme/request/params_rb.html">lib/payme/request/params.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-c-included">included</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-i-parse_params">parse_params</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>V</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#method-i-valid_params">valid_params</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="method-c-included">
+                    
+                    <a name="method-c-included"></a><b>included</b>(klass)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/params.rb#L3" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-c-included_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/params.rb, line 3</span>
+ 3:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
+ 4:       <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+ 5:         
+ 6:         <span class="ruby-comment cmt">#</span>
+ 7:         <span class="ruby-comment cmt"># Parse the provided parameters before to make a binary call</span>
+ 8:         <span class="ruby-comment cmt">#</span>
+ 9:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_params</span>
+10:           <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reject</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+11:             <span class="ruby-operator">!</span><span class="ruby-identifier">valid_params</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>)
+12:           <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+13:             <span class="ruby-identifier">a</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'='</span>)
+14:           <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot; amount=#{amount}&quot;</span>
+15:         <span class="ruby-keyword kw">end</span>
+16:       <span class="ruby-keyword kw">end</span>
+17:       
+18:       
+19:       <span class="ruby-identifier">private</span>
+20:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_params</span>
+21:         [<span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'pathfile'</span>]
+22:       <span class="ruby-keyword kw">end</span>
+23:     <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="method-i-parse_params">
+                    
+                    <a name="method-i-parse_params"></a><b>parse_params</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Parse the provided parameters before to make a binary call
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-i-parse_params_source')" id="l_method-i-parse_params_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/params.rb#L9" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-i-parse_params_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/params.rb, line 9</span>
+ 9:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_params</span>
+10:           <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reject</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+11:             <span class="ruby-operator">!</span><span class="ruby-identifier">valid_params</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>)
+12:           <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+13:             <span class="ruby-identifier">a</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'='</span>)
+14:           <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot; amount=#{amount}&quot;</span>
+15:         <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="method-i-valid_params">
+                    
+                    <a name="method-i-valid_params"></a><b>valid_params</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('method-i-valid_params_source')" id="l_method-i-valid_params_source">show</a>
+                        
+                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/request/params.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="method-i-valid_params_source" class="dyn-source">
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/request/params.rb, line 20</span>
+20:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_params</span>
+21:         [<span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'pathfile'</span>]
+22:       <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    
