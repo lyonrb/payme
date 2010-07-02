@@ -21,7 +21,7 @@ module Sogenactif
         # Executes the binary call
         #
         def exec
-          path = File.join(@options[:bin_path], 'request')
+          path = File.join(options[:bin_path], 'request')
           `#{path} #{parse_params}`
         end
       end

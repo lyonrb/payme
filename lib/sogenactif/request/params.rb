@@ -7,8 +7,18 @@ module Sogenactif
         # Parse the provided parameters before to make a binary call
         #
         def parse_params
-          @params.to_a.collect {|a| a.join('=')}.join(' ')
+          options.reject do |k,v|
+            !valid_params.include?(k.to_s)
+          end.to_a.collect do |a|
+            a.join('=')
+          end.join(' ') + " amount=#{amount}"
         end
+      end
+      
+      
+      private
+      def valid_params
+        ['merchant_id', 'merchant_country', 'amount', 'currency_code', 'pathfile']
       end
     end
   end

@@ -1,10 +1,9 @@
 module Sogenactif
   class Request
-    attr_reader   :options, :params
+    attr_reader   :amount, :options
     
-    def initialize(options = {}, params = {})
-      @options = default_options.merge(options)
-      @params  = default_params.merge(params)
+    def initialize(amount, options = {})
+      @amount, @options = amount, default_options.merge(options)
       
     end
     
@@ -13,15 +12,10 @@ module Sogenactif
     def default_options
       {
         :bin_path => '/',
-        :debug => true
-      }
-    end
-    
-    def default_params
-      {
+        :debug => true,
+        
         :merchant_id => '014213245611111',
         :merchant_country => 'fr',
-        :amount => 0,
         :currency_code => 978,
         :pathfile => '/'
       }
