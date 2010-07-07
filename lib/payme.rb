@@ -2,7 +2,7 @@ begin
   require "rubygems"
   require "bundler"
   Bundler.setup
-rescue  Bundler::GemfileNotFound
+rescue
   # There is no gemfile for this project (rails 2.3 ?)
 end
   
