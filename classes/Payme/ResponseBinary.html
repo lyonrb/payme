@@ -114,7 +114,7 @@
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
                         
-                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/response/binary.rb#L3" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/LIMSAS/payme/blob/d0d01e27e49fff962e84984cc44b6b491ccde383/lib/payme/response/binary.rb#L3" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="method-c-included_source" class="dyn-source">
@@ -131,37 +131,36 @@
 12:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">exec</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'!'</span>)
 13:           
 14:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingPath</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">or</span> (<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">empty?</span>)
-15:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
-16:           <span class="ruby-identifier">parse_result</span> <span class="ruby-identifier">result</span>
-17:         <span class="ruby-keyword kw">end</span>
-18:         
-19:         <span class="ruby-identifier">private</span>
-20:         <span class="ruby-comment cmt">#</span>
-21:         <span class="ruby-comment cmt"># Executes the binary call</span>
-22:         <span class="ruby-comment cmt">#</span>
-23:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
-24:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'response'</span>)
-25:           <span class="ruby-node">`#{path} pathfile=#{options[:pathfile]} message=#{message}`</span>
-26:         <span class="ruby-keyword kw">end</span>
-27:         
-28:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_result</span>(<span class="ruby-identifier">result</span>)
-29:           <span class="ruby-identifier">parsed</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-30:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-31:             <span class="ruby-identifier">parsed</span>[<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>]
-32:           <span class="ruby-keyword kw">end</span>
-33:           <span class="ruby-identifier">parsed</span>
-34:         <span class="ruby-keyword kw">end</span>
-35:         
-36:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields</span>
-37:           [<span class="ruby-value str">'code'</span>, <span class="ruby-value str">'error'</span>, <span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'transaction_id'</span>, <span class="ruby-value str">'payment_means'</span>,
-38:            <span class="ruby-value str">'transmission_date'</span>, <span class="ruby-value str">'payment_time'</span>, <span class="ruby-value str">'payment_date'</span>, <span class="ruby-value str">'response_code'</span>, <span class="ruby-value str">'payment_certificate'</span>,
-39:            <span class="ruby-value str">'authorisation_id'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'card_number'</span>, <span class="ruby-value str">'cvv_flag'</span>, <span class="ruby-value str">'cvv_response_code'</span>,
-40:            <span class="ruby-value str">'bank_response_code'</span>, <span class="ruby-value str">'complementary_code'</span>, <span class="ruby-value str">'complementary_info'</span>, <span class="ruby-value str">'return_context'</span>,
-41:            <span class="ruby-value str">'caddie'</span>, <span class="ruby-value str">'receipt_complement'</span>, <span class="ruby-value str">'merchant_language'</span>, <span class="ruby-value str">'language'</span>, <span class="ruby-value str">'customer_id'</span>,
-42:            <span class="ruby-value str">'order_id'</span>, <span class="ruby-value str">'customer_email'</span>, <span class="ruby-value str">'customer_ip_address'</span>, <span class="ruby-value str">'capture_day'</span>, <span class="ruby-value str">'capture_mode'</span>, <span class="ruby-value str">'data'</span>]
-43:         <span class="ruby-keyword kw">end</span>
-44:       <span class="ruby-keyword kw">end</span>
-45:     <span class="ruby-keyword kw">end</span></pre>
+15:           <span class="ruby-identifier">parse_result</span> <span class="ruby-identifier">result</span>
+16:         <span class="ruby-keyword kw">end</span>
+17:         
+18:         <span class="ruby-identifier">private</span>
+19:         <span class="ruby-comment cmt">#</span>
+20:         <span class="ruby-comment cmt"># Executes the binary call</span>
+21:         <span class="ruby-comment cmt">#</span>
+22:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
+23:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'response'</span>)
+24:           <span class="ruby-node">`#{path} pathfile=#{options[:pathfile]} message=#{message}`</span>
+25:         <span class="ruby-keyword kw">end</span>
+26:         
+27:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_result</span>(<span class="ruby-identifier">result</span>)
+28:           <span class="ruby-identifier">parsed</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+29:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+30:             <span class="ruby-identifier">parsed</span>[<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>]
+31:           <span class="ruby-keyword kw">end</span>
+32:           <span class="ruby-identifier">parsed</span>
+33:         <span class="ruby-keyword kw">end</span>
+34:         
+35:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields</span>
+36:           [<span class="ruby-value str">'code'</span>, <span class="ruby-value str">'error'</span>, <span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'transaction_id'</span>, <span class="ruby-value str">'payment_means'</span>,
+37:            <span class="ruby-value str">'transmission_date'</span>, <span class="ruby-value str">'payment_time'</span>, <span class="ruby-value str">'payment_date'</span>, <span class="ruby-value str">'response_code'</span>, <span class="ruby-value str">'payment_certificate'</span>,
+38:            <span class="ruby-value str">'authorisation_id'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'card_number'</span>, <span class="ruby-value str">'cvv_flag'</span>, <span class="ruby-value str">'cvv_response_code'</span>,
+39:            <span class="ruby-value str">'bank_response_code'</span>, <span class="ruby-value str">'complementary_code'</span>, <span class="ruby-value str">'complementary_info'</span>, <span class="ruby-value str">'return_context'</span>,
+40:            <span class="ruby-value str">'caddie'</span>, <span class="ruby-value str">'receipt_complement'</span>, <span class="ruby-value str">'merchant_language'</span>, <span class="ruby-value str">'language'</span>, <span class="ruby-value str">'customer_id'</span>,
+41:            <span class="ruby-value str">'order_id'</span>, <span class="ruby-value str">'customer_email'</span>, <span class="ruby-value str">'customer_ip_address'</span>, <span class="ruby-value str">'capture_day'</span>, <span class="ruby-value str">'capture_mode'</span>, <span class="ruby-value str">'data'</span>]
+42:         <span class="ruby-keyword kw">end</span>
+43:       <span class="ruby-keyword kw">end</span>
+44:     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -190,15 +189,15 @@ Executes the binary call
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('method-i-exec_source')" id="l_method-i-exec_source">show</a>
                         
-                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/response/binary.rb#L23" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/LIMSAS/payme/blob/d0d01e27e49fff962e84984cc44b6b491ccde383/lib/payme/response/binary.rb#L22" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="method-i-exec_source" class="dyn-source">
-                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 23</span>
-23:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
-24:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'response'</span>)
-25:           <span class="ruby-node">`#{path} pathfile=#{options[:pathfile]} message=#{message}`</span>
-26:         <span class="ruby-keyword kw">end</span></pre>
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 22</span>
+22:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec</span>
+23:           <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_path</span>], <span class="ruby-value str">'response'</span>)
+24:           <span class="ruby-node">`#{path} pathfile=#{options[:pathfile]} message=#{message}`</span>
+25:         <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -218,19 +217,19 @@ Executes the binary call
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('method-i-fields_source')" id="l_method-i-fields_source">show</a>
                         
-                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/response/binary.rb#L36" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/LIMSAS/payme/blob/d0d01e27e49fff962e84984cc44b6b491ccde383/lib/payme/response/binary.rb#L35" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="method-i-fields_source" class="dyn-source">
-                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 36</span>
-36:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields</span>
-37:           [<span class="ruby-value str">'code'</span>, <span class="ruby-value str">'error'</span>, <span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'transaction_id'</span>, <span class="ruby-value str">'payment_means'</span>,
-38:            <span class="ruby-value str">'transmission_date'</span>, <span class="ruby-value str">'payment_time'</span>, <span class="ruby-value str">'payment_date'</span>, <span class="ruby-value str">'response_code'</span>, <span class="ruby-value str">'payment_certificate'</span>,
-39:            <span class="ruby-value str">'authorisation_id'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'card_number'</span>, <span class="ruby-value str">'cvv_flag'</span>, <span class="ruby-value str">'cvv_response_code'</span>,
-40:            <span class="ruby-value str">'bank_response_code'</span>, <span class="ruby-value str">'complementary_code'</span>, <span class="ruby-value str">'complementary_info'</span>, <span class="ruby-value str">'return_context'</span>,
-41:            <span class="ruby-value str">'caddie'</span>, <span class="ruby-value str">'receipt_complement'</span>, <span class="ruby-value str">'merchant_language'</span>, <span class="ruby-value str">'language'</span>, <span class="ruby-value str">'customer_id'</span>,
-42:            <span class="ruby-value str">'order_id'</span>, <span class="ruby-value str">'customer_email'</span>, <span class="ruby-value str">'customer_ip_address'</span>, <span class="ruby-value str">'capture_day'</span>, <span class="ruby-value str">'capture_mode'</span>, <span class="ruby-value str">'data'</span>]
-43:         <span class="ruby-keyword kw">end</span></pre>
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 35</span>
+35:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields</span>
+36:           [<span class="ruby-value str">'code'</span>, <span class="ruby-value str">'error'</span>, <span class="ruby-value str">'merchant_id'</span>, <span class="ruby-value str">'merchant_country'</span>, <span class="ruby-value str">'amount'</span>, <span class="ruby-value str">'transaction_id'</span>, <span class="ruby-value str">'payment_means'</span>,
+37:            <span class="ruby-value str">'transmission_date'</span>, <span class="ruby-value str">'payment_time'</span>, <span class="ruby-value str">'payment_date'</span>, <span class="ruby-value str">'response_code'</span>, <span class="ruby-value str">'payment_certificate'</span>,
+38:            <span class="ruby-value str">'authorisation_id'</span>, <span class="ruby-value str">'currency_code'</span>, <span class="ruby-value str">'card_number'</span>, <span class="ruby-value str">'cvv_flag'</span>, <span class="ruby-value str">'cvv_response_code'</span>,
+39:            <span class="ruby-value str">'bank_response_code'</span>, <span class="ruby-value str">'complementary_code'</span>, <span class="ruby-value str">'complementary_info'</span>, <span class="ruby-value str">'return_context'</span>,
+40:            <span class="ruby-value str">'caddie'</span>, <span class="ruby-value str">'receipt_complement'</span>, <span class="ruby-value str">'merchant_language'</span>, <span class="ruby-value str">'language'</span>, <span class="ruby-value str">'customer_id'</span>,
+41:            <span class="ruby-value str">'order_id'</span>, <span class="ruby-value str">'customer_email'</span>, <span class="ruby-value str">'customer_ip_address'</span>, <span class="ruby-value str">'capture_day'</span>, <span class="ruby-value str">'capture_mode'</span>, <span class="ruby-value str">'data'</span>]
+42:         <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -258,7 +257,7 @@ correct And returns the form
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('method-i-launch_source')" id="l_method-i-launch_source">show</a>
                         
-                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/response/binary.rb#L11" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/LIMSAS/payme/blob/d0d01e27e49fff962e84984cc44b6b491ccde383/lib/payme/response/binary.rb#L11" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="method-i-launch_source" class="dyn-source">
@@ -267,9 +266,8 @@ correct And returns the form
 12:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">exec</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'!'</span>)
 13:           
 14:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingPath</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">or</span> (<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">empty?</span>)
-15:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Payme</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">result</span>[<span class="ruby-value">2</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
-16:           <span class="ruby-identifier">parse_result</span> <span class="ruby-identifier">result</span>
-17:         <span class="ruby-keyword kw">end</span></pre>
+15:           <span class="ruby-identifier">parse_result</span> <span class="ruby-identifier">result</span>
+16:         <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -289,18 +287,18 @@ correct And returns the form
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('method-i-parse_result_source')" id="l_method-i-parse_result_source">show</a>
                         
-                        | <a href="http://github.com/LIMSAS/payme/blob/281434c16634a58591fad47def2ae55944b2bbd1/lib/payme/response/binary.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/LIMSAS/payme/blob/d0d01e27e49fff962e84984cc44b6b491ccde383/lib/payme/response/binary.rb#L27" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="method-i-parse_result_source" class="dyn-source">
-                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 28</span>
-28:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_result</span>(<span class="ruby-identifier">result</span>)
-29:           <span class="ruby-identifier">parsed</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-30:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-31:             <span class="ruby-identifier">parsed</span>[<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>]
-32:           <span class="ruby-keyword kw">end</span>
-33:           <span class="ruby-identifier">parsed</span>
-34:         <span class="ruby-keyword kw">end</span></pre>
+                        <pre>    <span class="ruby-comment cmt"># File lib/payme/response/binary.rb, line 27</span>
+27:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_result</span>(<span class="ruby-identifier">result</span>)
+28:           <span class="ruby-identifier">parsed</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+29:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+30:             <span class="ruby-identifier">parsed</span>[<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>]
+31:           <span class="ruby-keyword kw">end</span>
+32:           <span class="ruby-identifier">parsed</span>
+33:         <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
