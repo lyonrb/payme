@@ -30,7 +30,9 @@ module Payme
     end
     
     def yaml_default
-      @config ||= symbolize_keys YAML::load(File.open(@@config_path))[@@config_env] unless @@config_path.nil? or @@config_env.nil?
+      if !@@config_path.nil? and !@@config_env.nil?
+        @config ||= symbolize_keys YAML::load(ERB.new(IO.read(File.join(@@config_path))).result)[@@config_env]
+      end
     end
     
     def symbolize_keys arg

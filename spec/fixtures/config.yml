@@ -1,2 +1,3 @@
 test:
   merchant_id: 123456789
+  bin_path: <%= '/tmp/test' %>

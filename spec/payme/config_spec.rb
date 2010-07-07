@@ -23,5 +23,10 @@ describe Payme::Config do
       Payme::Config.set_config('spec/fixtures/config.yml', 'test')
       Payme::Request.new(300).options[:merchant_id].should eql(123456789)
     end
+    
+    it 'should execute erb' do
+      Payme::Config.set_config('spec/fixtures/config.yml', 'test')
+      Payme::Request.new(300).options[:bin_path].should eql('/tmp/test')
+    end
   end
 end
