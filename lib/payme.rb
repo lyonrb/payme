@@ -1,4 +1,4 @@
 require 'payme/config'
 require 'payme/errors'
 require 'payme/request'
-require 'payme/response'e
+require 'payme/response'
