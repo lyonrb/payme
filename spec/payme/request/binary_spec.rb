@@ -20,14 +20,6 @@ describe Payme::RequestBinary do
       end.should raise_error Payme::Errors::MissingPath
     end
     
-    it 'should raise an error' do
-      request = Payme::Request.new(300)
-      request.expects(:exec).once.returns('!15!My Error!')
-      lambda do
-        request.launch
-      end.should raise_error Payme::Errors::ApiCall
-    end
-    
     it 'should return the form' do
       request = Payme::Request.new(300)
       request.expects(:exec).once.returns('!0!!Some Form')

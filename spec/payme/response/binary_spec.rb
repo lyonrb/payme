@@ -19,14 +19,6 @@ describe Payme::ResponseBinary do
       end.should raise_error Payme::Errors::MissingPath
     end
     
-    it 'should raise an error' do
-      response = Payme::Response.new('testing')
-      response.expects(:exec).once.returns('!15!My Error!')
-      lambda do
-        response.launch
-      end.should raise_error Payme::Errors::ApiCall
-    end
-    
     it 'should not raise an error if the number of elements is not equal to the number of fields' do
       response = Payme::Response.new('testing')
       response.expects(:exec).once.returns('!0!!!!!')

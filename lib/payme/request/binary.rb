@@ -12,7 +12,6 @@ module Payme
           result = exec.split('!')
           
           raise Payme::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
-          raise Payme::Errors::ApiCall.new(result[1], result[2]) unless result[1].to_i == 0
           result
         end
         
