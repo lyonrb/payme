@@ -18,7 +18,12 @@ module Payme
       
       private
       def valid_params
-        ['merchant_id', 'merchant_country', 'amount', 'currency_code', 'pathfile']
+        ['merchant_id', 'merchant_country', 'amount', 'currency_code', 'pathfile',
+          'normal_return_url', 'cancel_return_url', 'automatic_response_url',
+          'language', 'payment_means', 'header_flag', 'capture_day', 'capture_mode',
+          'bgcolor', 'block_align', 'block_order', 'textcolor', 'receipt_complement',
+          'caddie', 'customer_id', 'customer_email', 'customer_ip_address',
+          'data', 'return_context', 'target', 'order_id']
       end
     end
   end
