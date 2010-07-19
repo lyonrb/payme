@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{payme}
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Herv\303\251 GAUCHER"]
-  s.date = %q{2010-07-07}
+  s.date = %q{2010-07-19}
   s.description = %q{Need online payment?}
   s.email = %q{damien.mathieu@lim.eu}
   s.extra_rdoc_files = [
