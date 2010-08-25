@@ -2,8 +2,6 @@
 
 A ruby library to easily do and process online payments using the Atos Worldline API.
 
-**Disclaimer** : This is still under heavy development and shouldn't be used in production.
-
 Requirements
 ------------
 
