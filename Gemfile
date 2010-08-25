@@ -7,6 +7,6 @@ gem 'sdoc'
 gem 'sdoc-helpers'
 
 group :test do
-  gem "rspec"
+  gem "rspec", '~> 2.0.0.beta'
   gem "mocha"
 end

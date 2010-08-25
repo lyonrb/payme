@@ -1,6 +1,5 @@
+# encoding: UTF-8
 require 'payme'
 
-require 'spec'
+require 'rspec'
 require 'mocha'
-require 'spec/autorun'
-require 'spec/interop/test'
