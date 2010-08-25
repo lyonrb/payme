@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Payme
   module Params
     def self.included(klass)

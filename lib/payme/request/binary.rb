@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Payme
   module RequestBinary
     def self.included(klass)

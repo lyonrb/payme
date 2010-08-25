@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Payme
   class Request
     attr_reader   :amount, :options

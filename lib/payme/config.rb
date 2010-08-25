@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Payme
   class Config
     @@config_path = nil

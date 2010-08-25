@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Payme
   class Response
     attr_reader   :message, :options
