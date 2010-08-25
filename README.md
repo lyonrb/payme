@@ -7,7 +7,7 @@ A ruby library to easily do and process online payments using the Atos Worldline
 Requirements
 ------------
 
-* Ruby 1.8.7
+* Ruby (tested with 1.8.7 and 1.9.2)
 
 Contributing
 ------------
