@@ -34,4 +34,4 @@ Julien SANCHEZ :: julien.sanchez (AT|CHEZ) lim.eu
 
 Hervé GAUCHER  :: herve.gaucher  (AT|CHEZ) lim.eu
 
-Franck VERROT  :: franck (AT|CHEZ) lyonrb.fr
+Franck VERROT  :: franck (AT|CHEZ) verrot.fr
