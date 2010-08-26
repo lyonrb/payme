@@ -1,4 +1,4 @@
-Payme: Sogenactif API Ruby adapter
+Payme: Atos Worldline API Ruby adapter
 
 Copyright (c) 2010 LIM SAS
 
@@ -21,6 +21,4 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Sogenactif is an online payment service from the Société Générale bank
-(http://socgen.com - http://sogenactif.com).
-Sogenactif is based on an Atos-Worldline solution.
+Atos-Worldline is an online payment service used by several banking services in France.
