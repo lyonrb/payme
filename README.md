@@ -28,7 +28,7 @@ Developped and maintained by [LIM SAS](http://lim.eu)
 
 ## Contributors
 
-Damien MATHIEU :: damien.mathieu (AT|CHEZ) lim.eu
+Damien MATHIEU :: 42 (AT|CHEZ) dmathieu.com
 
 Julien SANCHEZ :: julien.sanchez (AT|CHEZ) lim.eu
 
