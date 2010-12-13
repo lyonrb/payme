@@ -19,6 +19,3 @@ module Payme
     end
   end
 end
-
-require 'payme/request/params'
-require 'payme/request/binary'

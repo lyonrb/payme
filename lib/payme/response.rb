@@ -9,5 +9,3 @@ module Payme
     end
   end
 end
-
-require 'payme/response/binary'
