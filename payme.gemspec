@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{payme}
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Herv\303\251 GAUCHER"]
-  s.date = %q{2010-07-19}
+  s.authors = ["LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Hervé GAUCHER"]
+  s.date = %q{2010-12-15}
   s.description = %q{Need online payment?}
   s.email = %q{damien.mathieu@lim.eu}
   s.extra_rdoc_files = [
@@ -18,7 +18,9 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
+     ".rvmrc",
      "Gemfile",
+     "Gemfile.lock",
      "LICENSE",
      "README.md",
      "Rakefile",
@@ -47,13 +49,13 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Process online payments through the Atos Worldline gateway}
   s.test_files = [
-    "spec/spec_helper.rb",
+    "spec/payme/config_spec.rb",
+     "spec/payme/request/binary_spec.rb",
+     "spec/payme/request/params_spec.rb",
      "spec/payme/request_spec.rb",
      "spec/payme/response/binary_spec.rb",
      "spec/payme/response_spec.rb",
-     "spec/payme/request/params_spec.rb",
-     "spec/payme/request/binary_spec.rb",
-     "spec/payme/config_spec.rb"
+     "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
