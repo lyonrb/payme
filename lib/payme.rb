@@ -1,12 +1,9 @@
 # encoding: UTF-8
 
-module Payme
-  autoload :Config, 'payme/config'
-  autoload :Errors, 'payme/errors'
-  autoload :Request, 'payme/request'
-  autoload :RequestBinary,  'payme/request/binary'
-  autoload :Params, 'payme/request/params'
-  autoload :Response, 'payme/response'
-  autoload :ResponseBinary, 'payme/response/binary'
-  
-end
+require 'payme/config'
+require 'payme/errors'
+require 'payme/request'
+require 'payme/request/binary'
+require 'payme/request/params'
+require 'payme/response'
+require 'payme/response/binary'
