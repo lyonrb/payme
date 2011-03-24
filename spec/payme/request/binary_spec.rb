@@ -12,6 +12,14 @@ describe Payme::RequestBinary do
         request.launch
       end.should raise_error Payme::Errors::MissingPath
     end
+
+    it 'should raise an error api call error if the result is nil' do
+      request = Payme::Request.new(300)
+      request.expects(:exec).once.returns(nil)
+      lambda do
+        request.launch
+      end.should raise_error Payme::Errors::MissingPath
+    end
     
     it 'should raise an error api call if there is no error and no code' do
       request = Payme::Request.new(300)

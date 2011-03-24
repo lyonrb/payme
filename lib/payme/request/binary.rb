@@ -10,7 +10,7 @@ module Payme
         # And returns the form
         #
         def launch
-          result = exec.split('!')
+          result = exec.split('!') rescue ''
           
           raise Payme::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
           result
