@@ -22,7 +22,7 @@ module Payme
         #
         def exec
           path = File.join(options[:bin_path], 'request')
-          `#{path} #{parse_params}`
+          `#{path} #{parse_params}` || ''
         end
       end
     end

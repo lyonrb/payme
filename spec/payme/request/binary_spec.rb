@@ -40,5 +40,11 @@ describe Payme::RequestBinary do
       request.expects(:`).with("/bin/request #{request.parse_params}").once
       request.send(:exec)
     end
+    
+    it "should return an empty string if there is no result" do
+      request = Payme::Request.new(300, :bin_path => '/bin')
+      request.expects(:`).with("/bin/request #{request.parse_params}").once.returns(nil)
+      request.send(:exec).should eql('')
+    end
   end
 end
