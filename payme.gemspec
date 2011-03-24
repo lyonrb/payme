@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{payme}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Hervé GAUCHER"]
-  s.date = %q{2010-12-15}
+  s.date = %q{2011-03-24}
   s.description = %q{Need online payment?}
   s.email = %q{damien.mathieu@lim.eu}
   s.extra_rdoc_files = [
@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/LIMSAS/payme}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.5.1}
   s.summary = %q{Process online payments through the Atos Worldline gateway}
   s.test_files = [
     "spec/payme/config_spec.rb",
@@ -59,7 +59,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
