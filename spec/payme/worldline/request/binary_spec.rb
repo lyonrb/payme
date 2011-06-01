@@ -1,12 +1,12 @@
 # encoding: UTF-8
 require 'spec_helper'
 
-describe Payme::RequestBinary do
+describe Payme::Worldline::RequestBinary do
   
   describe 'launch' do
     
     it 'should raise an error api call error if the result is an empty string' do
-      request = Payme::Request.new(300)
+      request = Payme::Worldline::Request.new(300)
       request.expects(:exec).once.returns('')
       lambda do
         request.launch
@@ -14,7 +14,7 @@ describe Payme::RequestBinary do
     end
     
     it 'should raise an error api call if there is no error and no code' do
-      request = Payme::Request.new(300)
+      request = Payme::Worldline::Request.new(300)
       request.expects(:exec).once.returns('!!!')
       lambda do
         request.launch
@@ -22,7 +22,7 @@ describe Payme::RequestBinary do
     end
     
     it 'should return the form' do
-      request = Payme::Request.new(300)
+      request = Payme::Worldline::Request.new(300)
       request.expects(:exec).once.returns('!0!!Some Form')
       request.launch.should eql(['', '0', '', 'Some Form'])
     end
@@ -30,19 +30,19 @@ describe Payme::RequestBinary do
   
   describe 'exec' do
     it 'should execute the binary with basic  options' do
-      request = Payme::Request.new(300)
+      request = Payme::Worldline::Request.new(300)
       request.expects(:`).with("/request #{request.parse_params}").once
       request.send(:exec)
     end
     
     it 'should execute the binary with a defined path' do
-      request = Payme::Request.new(300, :bin_path => '/bin')
+      request = Payme::Worldline::Request.new(300, :bin_path => '/bin')
       request.expects(:`).with("/bin/request #{request.parse_params}").once
       request.send(:exec)
     end
     
     it "should return an empty string if there is no result" do
-      request = Payme::Request.new(300, :bin_path => '/bin')
+      request = Payme::Worldline::Request.new(300, :bin_path => '/bin')
       request.expects(:`).with("/bin/request #{request.parse_params}").once.returns(nil)
       request.send(:exec).should eql('')
     end

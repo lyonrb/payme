@@ -1,9 +1,11 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.0.7)
     diff-lcs (1.1.2)
     gemcutter (0.6.1)
     git (1.2.5)
+    i18n (0.6.0)
     jeweler (1.4.0)
       gemcutter (>= 0.1.0)
       git (>= 1.2.5)
@@ -35,6 +37,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
+  i18n
   jeweler
   mocha
   rdiscount

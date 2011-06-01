@@ -1,5 +1,8 @@
 source "http://rubygems.org"
 
+gem 'i18n'
+gem 'activesupport'
+
 gem 'jeweler'
 
 gem 'rdiscount'
