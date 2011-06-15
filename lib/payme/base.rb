@@ -51,7 +51,8 @@ module Payme
     end
     
     def method_missing(method, *args, &block)
-      @instance.public_send(method, *args, &block)
+      super unless respond_to?(method)
+      @instance.send(method, *args, &block)
     end
     
     
