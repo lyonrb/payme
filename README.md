@@ -1,7 +1,7 @@
 # Payme
 
 A ruby library to easily do and process online payments using the Atos Worldline API.
-"!http://travis-ci.org/lyonrb/payme.png!":http://travis-ci.org/lyonrb/payme
+[![Travis](http://travis-ci.org/lyonrb/payme.png)](http://travis-ci.org/lyonrb/payme)
 
 Requirements
 ------------
