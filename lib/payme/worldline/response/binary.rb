@@ -1,4 +1,7 @@
 # encoding: UTF-8
+require 'payme/worldline/request'
+require 'payme/worldline/response'
+
 module Payme
   module Worldline
     module ResponseBinary
