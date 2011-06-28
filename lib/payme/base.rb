@@ -27,7 +27,7 @@ module Payme
       raise "Invalid type provided" if library.empty?
       
       path = File.dirname(__FILE__)
-      Dir[path + "/#{library}/**/*"].each do |file|
+      Dir[path + "/#{library}/**/*.rb"].each do |file|
         require file
       end
       
