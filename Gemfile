@@ -1,15 +1,11 @@
 source "http://rubygems.org"
+gemspec
 
-gem 'i18n'
-gem 'activesupport'
-
-gem 'jeweler'
-
-gem 'rdiscount'
-gem 'sdoc'
-gem 'sdoc-helpers'
+group :development do
+  gem 'rake'
+end
 
 group :test do
-  gem "rspec", '~> 2.0.0.beta'
-  gem "mocha"
+  gem 'rspec'
+  gem 'mocha'
 end
