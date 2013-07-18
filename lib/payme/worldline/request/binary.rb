@@ -7,7 +7,7 @@ module Payme
     module RequestBinary
       def self.included(klass)
         klass.class_eval do
-        
+
           #
           # Executes the binary call, gets the datas
           # Validates that the the code is correct
@@ -15,11 +15,11 @@ module Payme
           #
           def launch
             result = exec.split('!')
-            
+
             raise Payme::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
             result
           end
-        
+
           private
           #
           # Executes the binary call

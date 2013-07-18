@@ -7,7 +7,7 @@ module Payme
     module Params
       def self.included(klass)
         klass.class_eval do
-        
+
           #
           # Parse the provided parameters before to make a binary call
           #
@@ -19,8 +19,8 @@ module Payme
             end.join(' ') + " amount=#{amount}"
           end
         end
-        
-        
+
+
         private
         def valid_params
           ['merchant_id', 'merchant_country', 'amount', 'currency_code', 'pathfile',

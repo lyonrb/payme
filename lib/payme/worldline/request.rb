@@ -3,13 +3,11 @@ module Payme
   module Worldline
     class Request
       attr_reader   :amount, :options
-    
+
       def initialize(amount, options = {})
         @amount, @options = amount, default_options.merge(options)
-      
       end
-      
-      
+
       private
       def default_options
         {

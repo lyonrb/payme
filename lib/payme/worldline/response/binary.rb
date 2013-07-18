@@ -7,7 +7,7 @@ module Payme
     module ResponseBinary
       def self.included(klass)
         klass.class_eval do
-          
+
           #
           # Executes the binary call, gets the datas
           # Validates that the the code is correct
@@ -15,11 +15,11 @@ module Payme
           #
           def launch
             result = exec.split('!')
-            
+
             raise Payme::Errors::MissingPath if result.empty? or (result[1].empty? && result[2].empty?)
             parse_result result
           end
-          
+
           private
           #
           # Executes the binary call
@@ -28,7 +28,7 @@ module Payme
             path = File.join(options[:bin_path], 'response')
             `#{path} pathfile=#{options[:pathfile]} message=#{message}`
           end
-          
+
           def parse_result(result)
             parsed = Hash.new
             result.each_index do |i|
@@ -36,7 +36,7 @@ module Payme
             end
             parsed
           end
-          
+
           def fields
             ['code', 'error', 'merchant_id', 'merchant_country', 'amount', 'transaction_id', 'payment_means',
               'transmission_date', 'payment_time', 'payment_date', 'response_code', 'payment_certificate',
