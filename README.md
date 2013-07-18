@@ -1,15 +1,8 @@
-# Payme
+# Payme [![Build Status](https://travis-ci.org/lyonrb/payme.png)](https://travis-ci.org/lyonrb/payme)
 
 A ruby library to easily do and process online payments using the Atos Worldline API.
-[![Travis](http://travis-ci.org/lyonrb/payme.png)](http://travis-ci.org/lyonrb/payme)
 
-Requirements
-------------
-
-* Ruby (tested with 1.8.7 and 1.9.2)
-
-Contributing
-------------
+## Contributing
 
 If you think Payme is great but can be improved, feel free to contribute.
 To do so, you can :
@@ -22,7 +15,7 @@ To do so, you can :
 And that's it! We'll soon take a look at your issue and review your changes.
 
 
-# Credits
+## Credits
 
 Developped and maintained by [LIM SAS](http://lim.eu)
 
