@@ -22,7 +22,7 @@ And that's it! We'll soon take a look at your issue and review your changes.
 
 Originaly built by [LIM SAS](http://lim.eu). Now maintained by [LyonRB](http://lyonrb.fr)
 
-Damien MATHIEU :: 42 (AT|CHEZ) dmathieu.com
-Julien SANCHEZ :: julien.sanchez (AT|CHEZ) lim.eu
-Hervé GAUCHER  :: herve.gaucher  (AT|CHEZ) lim.eu
+Damien MATHIEU :: 42 (AT|CHEZ) dmathieu.com  
+Julien SANCHEZ :: julien.sanchez (AT|CHEZ) lim.eu  
+Hervé GAUCHER  :: herve.gaucher  (AT|CHEZ) lim.eu  
 Franck VERROT  :: franck (AT|CHEZ) verrot.fr
