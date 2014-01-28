@@ -32,7 +32,8 @@ module Payme
           def parse_result(result)
             parsed = Hash.new
             result.each_index do |i|
-              parsed[fields[i-1].to_sym] = result[i] if fields.length >= i-1
+              key = fields[i-1]
+              parsed[key.to_sym] = result[i] if key
             end
             parsed
           end
